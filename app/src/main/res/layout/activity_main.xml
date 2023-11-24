@@ -13,13 +13,13 @@
         android:textStyle="bold"
         android:layout_marginTop="8dp"
         android:text="COVID-19"
-        android:id="@+id/TVOverview"
+        android:id="@+id/Title"
         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/TVOverview"
+        android:layout_below="@id/Title"
         android:layout_marginTop="16dp"
         android:id="@+id/RVCountry"
         />

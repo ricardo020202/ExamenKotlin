@@ -10,6 +10,5 @@ class ViewHolder(private val binding: ItemBinding) : RecyclerView.ViewHolder(bin
     fun bind(item: Country){
         binding.Total.text = item.cases.total.toString()
         binding.New.text = item.cases.new.toString()
-        binding.Date.text = item.cases.toString()
     }
 }
