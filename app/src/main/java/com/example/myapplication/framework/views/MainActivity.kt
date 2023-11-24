@@ -26,7 +26,7 @@ class MainActivity: AppCompatActivity() {
         setContentView(binding.root)
         //Configure RecyclerView
         binding.RVCountry.setHasFixedSize(true)
-        binding.RVCountry.layoutManager = GridLayoutManager(this, 2)
+        binding.RVCountry.layoutManager = GridLayoutManager(this, 1)
         binding.RVCountry.adapter = adapter
     }
 
