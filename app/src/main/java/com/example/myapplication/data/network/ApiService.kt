@@ -6,6 +6,6 @@ import retrofit2.http.Header
 import retrofit2.http.Query
 
 interface ApiService {
-    @GET("covid19?date=2020-06-16")
-    suspend fun getList(@Header("X-Api-Key") token: String): List<Country>
+    @GET("covid19")
+    suspend fun getList(@Header("X-Api-Key") token: String, @Query("date") date: String): List<Country>
 }

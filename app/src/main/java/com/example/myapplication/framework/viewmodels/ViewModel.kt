@@ -13,9 +13,9 @@ class ViewModel: ViewModel() {
     val LiveData = MutableLiveData<List<Country>>()
     private val listRequirement = ListRequirement()
 
-    fun getList() {
+    fun getList(date: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val result: List<Country>? = listRequirement()
+            val result: List<Country>? = listRequirement(date)
             //Log.d("Salida", result?.total_results.toString())
             CoroutineScope(Dispatchers.Main).launch {
                 LiveData.postValue(result!!)
