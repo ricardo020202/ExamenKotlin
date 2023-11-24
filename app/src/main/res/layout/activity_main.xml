@@ -6,21 +6,35 @@
     >
 
     <TextView
+        android:id="@+id/Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="26sp"
-        android:textStyle="bold"
         android:layout_marginTop="8dp"
+        android:gravity="center"
         android:text="COVID-19"
-        android:id="@+id/Title"
-        />
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Title"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="Mostrar Selección" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RVCountry"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/Title"
-        android:layout_marginTop="16dp"
-        android:id="@+id/RVCountry"
-        />
+        android:layout_below="@id/button"
+        android:layout_marginTop="14dp" />
 </RelativeLayout>
