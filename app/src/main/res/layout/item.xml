@@ -6,6 +6,7 @@
         android:orientation="vertical"
         android:padding="16dp"
         >
+    <!-- Country form which data is displayed -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -16,6 +17,7 @@
             android:id="@+id/Country"
             android:textStyle="bold"/>
 
+    <!-- Barchart for displaying data -->
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/barChart"
         android:layout_width="match_parent"

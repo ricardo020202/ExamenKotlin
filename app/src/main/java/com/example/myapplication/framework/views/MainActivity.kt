@@ -20,6 +20,9 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
+/**
+ * MainActivity class responsible for the main user interface and interaction
+ */
 class MainActivity: AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val adapter : Adapter = Adapter()
@@ -28,6 +31,9 @@ class MainActivity: AppCompatActivity() {
     private lateinit var spinner: Spinner
     private lateinit var button: Button
 
+    /**
+     * Called when the activity is first created
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,11 +42,17 @@ class MainActivity: AppCompatActivity() {
         initializeObservers()
     }
 
+    /**
+     * Initializes data binding
+     */
     private fun initializeBinding() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
 
+    /**
+     * Initializes UI components
+     */
     private fun initializeViews() {
         spinner = findViewById(R.id.spinner)
         val opciones = generarOpcionesParaAnios(2020, 2020)
@@ -53,6 +65,14 @@ class MainActivity: AppCompatActivity() {
             mostrarSeleccion()
         }
     }
+
+    /**
+     * Generates options for years in the desired format
+     *
+     * @param anioInicial Starting year
+     * @param anioFinal Ending year
+     * @return Array of formatted date options
+     */
     private fun generarOpcionesParaAnios(anioInicial: Int, anioFinal: Int): Array<String> {
         val opciones = mutableListOf<String>()
 
@@ -77,6 +97,11 @@ class MainActivity: AppCompatActivity() {
         return opciones.toTypedArray()
     }
 
+    /**
+     * Sets up the RecyclerView with the provided list of countries
+     *
+     * @param dataForList List of countries to display
+     */
     private fun setUpRecyclerView(dataForList: List<Country>) {
         binding.RVCountry.setHasFixedSize(true)
 
@@ -87,12 +112,18 @@ class MainActivity: AppCompatActivity() {
         binding.RVCountry.adapter = adapter
     }
 
+    /**
+     * Initializes observers for LiveData updates
+     */
     private fun initializeObservers() {
         viewModel.LiveData.observe(this){ country ->
             setUpRecyclerView(country)
         }
     }
 
+    /**
+     * Shows the selected option based on the spinner's selection
+     */
     private fun mostrarSeleccion() {
         val opcionSeleccionada = spinner.selectedItem.toString()
 
