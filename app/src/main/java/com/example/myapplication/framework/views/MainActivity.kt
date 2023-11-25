@@ -55,7 +55,7 @@ class MainActivity: AppCompatActivity() {
         val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
 
         for (anio in anioInicial..anioFinal) {
-            for (mes in Calendar.JANUARY..Calendar.DECEMBER) {
+            for (mes in Calendar.FEBRUARY..Calendar.DECEMBER) {
                 val calendar = Calendar.getInstance()
                 calendar.set(Calendar.YEAR, anio)
                 calendar.set(Calendar.MONTH, mes)
@@ -72,7 +72,6 @@ class MainActivity: AppCompatActivity() {
 
         return opciones.toTypedArray()
     }
-
 
     private fun setUpRecyclerView(dataForList: List<Country>) {
         binding.RVCountry.setHasFixedSize(true)
