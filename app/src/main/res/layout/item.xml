@@ -12,24 +12,12 @@
             android:textSize="18sp"
             android:gravity="center"
             android:layout_marginTop="16dp"
-            android:text="Total Cases"
-            android:id="@+id/Country" />
+            android:text="Country"
+            android:id="@+id/Country"
+            android:textStyle="bold"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="Total Cases"
-            android:id="@+id/Total" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:layout_marginTop="16dp"
-            android:text="New Cases"
-            android:id="@+id/New" />
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/barChart"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
     </LinearLayout>
