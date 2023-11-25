@@ -7,11 +7,15 @@ import android.widget.Button
 import android.widget.Spinner
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.myapplication.databinding.ActivityMainBinding
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.myapplication.data.network.model.Country
 import com.example.myapplication.framework.adapters.Adapter
 import com.example.myapplication.framework.viewmodels.ViewModel
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarDataSet
+import com.github.mikephil.charting.data.BarEntry
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
