@@ -9,17 +9,31 @@ import kotlinx.coroutines.launch
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 
-class ViewModel: ViewModel() {
+/**
+ * ViewModel class for handling data and business logic related to COVID-19 cases by country
+ */
+class ViewModel : ViewModel() {
+    // LiveData to observe changes in the list of countries
     val LiveData = MutableLiveData<List<Country>>()
+
+    // Instance of the ListRequirement class for data retrieval
     private val listRequirement = ListRequirement()
 
+    /**
+     * Function to fetch the list of countries for a given date
+     *
+     * @param date String representing the date for which the COVID-19 cases are requested
+     */
     fun getList(date: String) {
+        // Launch a coroutine in the IO dispatcher to perform the data retrieval
         viewModelScope.launch(Dispatchers.IO) {
+            // Call the ListRequirement function to fetch the list
             val result: List<Country>? = listRequirement(date)
-            //Log.d("Salida", result?.total_results.toString())
+
+            // Use the Main dispatcher to update the LiveData with the fetched result
             CoroutineScope(Dispatchers.Main).launch {
                 LiveData.postValue(result!!)
             }
-        }}
-
+        }
+    }
 }
